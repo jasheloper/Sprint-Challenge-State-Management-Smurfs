@@ -7,16 +7,39 @@ const Smurfies = (props) => {
        props.fetchSmurfs();
    }, []);
 
-   if (props.isFetching) {
-       return <h3>
-           Please Wait ...
-       </h3>
-   }
+   // if (props.isFetching) {
+   //     return <h3>
+   //         Please Wait ...
+   //     </h3>
+   // }
 
    return (
-      <div>
-         Hey
-         </div>
+  
+       <div className="container">
+
+            <div className="header">
+               Smurfs
+            </div>
+
+            {props.smurfs.map(x => {
+               return (    
+               
+               <div id={x.id}>
+
+                <h2> {x.name} </h2>
+                  <h3> {x.height} </h3>
+                   {x.age} 
+
+                  </div>
+                  
+                  )
+               
+           
+
+            })}
+
+          </div>
+      
    )
 }
 
