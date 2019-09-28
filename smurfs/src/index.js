@@ -13,4 +13,3 @@ ReactDOM.render(
       <App />
       </Provider>, document.getElementById("root"));
 
-      //http://localhost:3333/smurfs

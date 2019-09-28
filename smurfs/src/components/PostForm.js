@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Form, Field, withFormik } from "formik";
 import axios from "axios";
-import "../App.css"
 
 
 
-const AddSmurfForm = ({ errors, touched, values, status }) => {
+const AddSmurfForm = ({ values, status }) => {
    const [smurf, setSmurf] = useState ([]);
 
 
@@ -62,8 +61,6 @@ const AddSmurfForm = ({ errors, touched, values, status }) => {
 </>
   )
 }
-
-
 
 
 
