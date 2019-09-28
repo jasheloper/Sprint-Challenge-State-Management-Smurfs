@@ -1,47 +1,94 @@
-import React, {Component} from 'React'
+import React, { useState, useEffect } from "react";
+import { Form, Field, withFormik } from "formik";
+import axios from "axios";
+import "../App.css"
 
-class PostForm extends Component {
-   constructor(props) {
-      super(props)
 
-      this.state = {
-         name: '',
-         age: '',
-         height: ''
+
+const AddSmurfForm = ({ errors, touched, values, status }) => {
+   const [smurf, setSmurf] = useState ([]);
+
+
+   useEffect(() => {
+      if (status) {
+         setSmurf([...smurf, status]);
       }
-   }
-   render() {
-      const { name, age,  height } = this.state
-      return (
-         <div>
-
-            <form>
-
-                  <div>
-               <input type="text" name="name" value={name} onChange={this.changeHandler}  />
-               </div>
-
-               <div>
-               <input type="text" name="age" value={age} onChange={this.changeHandler}    />
-               </div>
+  }, [status]);
 
 
-               <div>
-               <input type="text" name="height" value={height} onChange={this.changeHandler} />
-               </div>
+  return(
+
+ <>
+  
+  <Form>
+
+  <Field
+                    className="field"
+                    component="input"
+                    type="text"
+                    name="name"
+                    placeholder="Smurf name"
+                />
 
 
-               <div>
-               <input type="text" name=""></input>
-               </div>
+<Field
+                    className="field"
+                    component="input"
+                    type="text"
+                    name="age"
+                    placeholder="Age"
+                />
 
 
-               </form>
 
+<Field
+                    className="field"
+                    component="input"
+                    type="text"
+                    name="height"
+                    placeholder="Height"
+                />
 
-            </div>
-      )
-   }
+  </Form>
+
+ <br />
+
+ {smurf.map(x => {
+
+    return (<>{x.name}</>)
+    
+ })}
+
+</>
+  )
 }
 
-export default PostForm; 
+
+
+
+
+const formikHOC = withFormik({
+   mapPropsToValues({ name, age, height }) {
+       return {
+           name: name || "",
+           age: age || "",
+           height: height || "",
+
+       };
+      },
+
+
+      handleSubmit(values, { setStatus, resetForm }) {
+            axios
+               .post("http://localhost:3333/smurfs", values)
+               .then(res => {
+                  console.log("handleSubmit: then: res: ", res);
+                  setStatus(res.data);
+                  resetForm();
+               })
+               .catch(err => console.error("handleSubmit: catch: err: ", err));
+}
+});
+
+const UserFormWithFormik = formikHOC(AddSmurfForm);
+export default UserFormWithFormik;

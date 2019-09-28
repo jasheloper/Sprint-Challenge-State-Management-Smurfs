@@ -1,10 +1,17 @@
 import React from 'react';
-import Smurfies from './components/Smurfies'
+import Smurfies from './Components/Smurfies'
+
 
 
 function App() {
+
+ 
+
   return (
     <>
+
+    
+
     <Smurfies />
     
     </>

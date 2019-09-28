@@ -1,25 +1,34 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from "react";
 import {connect} from 'react-redux';
 import { fetchSmurfs } from '../actions';
+import AddSmurfForm from './PostForm'
 
 const Smurfies = (props) => {
    useEffect(() => {
        props.fetchSmurfs();
    }, []);
 
-   // if (props.isFetching) {
-   //     return <h3>
-   //         Please Wait ...
-   //     </h3>
-   // }
+
+
 
    return (
+
+  
   
        <div className="container">
 
             <div className="header">
                Smurfs
             </div>
+
+
+
+               <div>   
+                  <AddSmurfForm />
+                  </div>
+         
+
+
 
             {props.smurfs.map(x => {
                return (    
@@ -33,21 +42,22 @@ const Smurfies = (props) => {
                   </div>
                   
                   )
-               
-           
 
             })}
 
           </div>
       
-   )
-}
+   );
 
-
-
+};
 
 const mapStateToProps = state => {
-   return {isFetching: state.isFetching, smurfs: state.smurfs};
+   return {isFetching: state.isFetching, smurfs: state.smurfs}
 };
 
 export default connect(mapStateToProps, {fetchSmurfs: fetchSmurfs})(Smurfies);
+
+
+
+
+
