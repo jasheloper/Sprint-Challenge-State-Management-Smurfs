@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/build-a-smurf/precache-manifest.1f0be04624be3576b95737bfd173e9e7.js"
+  "/build-a-smurf/precache-manifest.c80fc516a5ed4ece4102f14be0e327a8.js"
 );
 
 self.addEventListener('message', (event) => {
