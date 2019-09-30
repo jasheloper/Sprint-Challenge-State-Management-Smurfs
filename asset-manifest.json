@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/build-a-smurf/static/css/main.645076ad.chunk.css",
+    "main.js": "/build-a-smurf/static/js/main.ee28af1c.chunk.js",
+    "main.js.map": "/build-a-smurf/static/js/main.ee28af1c.chunk.js.map",
+    "runtime~main.js": "/build-a-smurf/static/js/runtime~main.c8c0e84c.js",
+    "runtime~main.js.map": "/build-a-smurf/static/js/runtime~main.c8c0e84c.js.map",
+    "static/js/2.9530d182.chunk.js": "/build-a-smurf/static/js/2.9530d182.chunk.js",
+    "static/js/2.9530d182.chunk.js.map": "/build-a-smurf/static/js/2.9530d182.chunk.js.map",
+    "index.html": "/build-a-smurf/index.html",
+    "precache-manifest.1f0be04624be3576b95737bfd173e9e7.js": "/build-a-smurf/precache-manifest.1f0be04624be3576b95737bfd173e9e7.js",
+    "service-worker.js": "/build-a-smurf/service-worker.js",
+    "static/css/main.645076ad.chunk.css.map": "/build-a-smurf/static/css/main.645076ad.chunk.css.map"
+  }
+}
