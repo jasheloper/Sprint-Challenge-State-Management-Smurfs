@@ -20,28 +20,36 @@ const AddSmurfs = ({ addSmurf, error }) => {
    return (
       <div>
 
-         <form onSubmit={onSubmit}>
+       
 
-            <label htmlFor="name">Name:</label>
+         <form onSubmit={onSubmit} className="form">
+
+         <h2>Add Someone:</h2>
+         
             <input
+            placeholder="Name"
+            className="input"
             type="text"
             value={name}
             onChange={e => setName(e.target.value)} />
 
-            <label htmlFor="name">Age:</label>
+       
             <input
+             placeholder="Age"
+            className="input"
             type="text"
             value={age}
             onChange={e => setAge(e.target.value)} />
 
 
-            <label htmlFor="name">Height:</label>
             <input
+             placeholder="Height"
+            className="input"
             type="text"
             value={height}
             onChange={e => setHeight(e.target.value)} />
 
-
+<br />
          
       <button type="submit">Add Smurf</button>
 

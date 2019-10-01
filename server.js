@@ -17,7 +17,8 @@ let smurfs = [
     name: 'Brainey',
     age: 200,
     height: '5cm',
-    id: 0
+    id: 0,
+    image: "https://www.stickpng.com/assets/thumbs/5a7b6d1eabc3d121aba71092.png"
   }
 ];
 server.get('/smurfs', (req, res) => {
